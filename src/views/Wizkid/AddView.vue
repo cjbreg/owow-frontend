@@ -8,14 +8,14 @@ const { wizkids, loading } = storeToRefs(useWizkidStore());
 const { addWizkid } = useWizkidStore();
 
 const HandleAddWizkid = (newKid: Wizkid) => {
-  const testWizkid: Wizkid = {
+  const newWizkid: Wizkid = {
     id: uuidv4(),
     name: newKid.name,
     role: newKid.role,
     email: newKid.email,
     picture: newKid.picture
   };
-  addWizkid(testWizkid);
+  addWizkid(newWizkid);
 };
 
 const isValid = (newKid: Wizkid): boolean => {
