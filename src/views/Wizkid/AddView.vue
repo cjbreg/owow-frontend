@@ -16,6 +16,7 @@ const HandleAddWizkid = (newKid: Wizkid) => {
     picture: newKid.picture
   };
   addWizkid(newWizkid);
+  router.push;
 };
 
 const isValid = (newKid: Wizkid): boolean => {
