@@ -7,17 +7,16 @@ import { useWizkidStore } from '@/stores/wizkid';
 const { wizkids, loading } = storeToRefs(useWizkidStore());
 const { addWizkid } = useWizkidStore();
 
-const HandleAddWizkid = (newKid: Wizkid) => {
-  const newWizkid: Wizkid = {
-    id: uuidv4(),
-    name: newKid.name,
-    role: newKid.role,
-    email: newKid.email,
-    picture: newKid.picture
-  };
-  addWizkid(newWizkid);
-  router.push;
-};
+// const HandleAddWizkid = (newKid: Wizkid) => {
+//   const newWizkid: Wizkid = {
+//     id: uuidv4(),
+//     name: newKid.name,
+//     role: newKid.role,
+//     email: newKid.email,
+//     picture: newKid.picture
+//   };
+//   addWizkid(newWizkid);
+// };
 
 const isValid = (newKid: Wizkid): boolean => {
   const regex = /^\S+@\S+$/;
@@ -33,7 +32,6 @@ export default {
     return {
       loading,
       wizkids,
-      HandleAddWizkid,
       isValid,
       newKid: {
         name: null,
@@ -43,6 +41,19 @@ export default {
       },
       roles: [Role.BOSS, Role.DESIGNER, Role.DEVELOPER, Role.ITERN]
     };
+  },
+  methods: {
+    handleAddWizkid(newKid: Wizkid) {
+      const newWizkid: Wizkid = {
+        id: uuidv4(),
+        name: newKid.name,
+        role: newKid.role,
+        email: newKid.email,
+        picture: newKid.picture
+      };
+      addWizkid(newWizkid);
+      this.$router.push('/');
+    }
   }
 };
 </script>
@@ -119,7 +130,7 @@ export default {
 
     <button
       class="disabled:bg-gray-300 w-32 py-1 font-medium bg-green-700 text-white rounded-md hover:bg-green-600 transition duration-150"
-      @click="HandleAddWizkid(newKid)"
+      @click="handleAddWizkid(newKid)"
       :disabled="!isValid(newKid)">
       Add
     </button>
