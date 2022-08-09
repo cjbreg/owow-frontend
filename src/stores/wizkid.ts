@@ -5,7 +5,8 @@ export const useWizkidStore = defineStore({
   id: 'wizkid',
   state: (): State => ({
     wizkids: [],
-    loading: false
+    loading: false,
+    wizkid: null
   }),
   persist: true,
   getters: {
@@ -17,6 +18,9 @@ export const useWizkidStore = defineStore({
     },
     addWizkid(newWizkid: IWizkid) {
       this.wizkids.push(newWizkid);
+    },
+    setCurrentWizkid(wizkid: IWizkid) {
+      this.wizkid = wizkid;
     }
   }
 });
@@ -24,6 +28,7 @@ export const useWizkidStore = defineStore({
 interface State {
   wizkids: IWizkid[];
   loading: boolean;
+  wizkid: IWizkid | null;
 }
 
 interface IWizkid {

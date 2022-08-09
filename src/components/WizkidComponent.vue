@@ -1,5 +1,8 @@
 <script lang="ts">
 import Icon from './icons/Icon.vue';
+import { useWizkidStore } from '@/stores/wizkid';
+import type { Wizkid } from '@/models/Wizkid';
+const { setCurrentWizkid } = useWizkidStore();
 export default {
   props: {
     wizkid: {
@@ -9,8 +12,9 @@ export default {
   },
   components: { Icon },
   methods: {
-    handleWizkidNavigate(id: string) {
-      this.$router.push(`/wizkid/profile/${id}`);
+    handleWizkidNavigate(wizkid: Wizkid) {
+      setCurrentWizkid(wizkid);
+      this.$router.push(`/wizkid/profile/${wizkid.id}`);
     }
   }
 };
@@ -34,7 +38,7 @@ export default {
 
     <div
       class="text-white flex justify-center items-center p-6 rounded-2xl mr-2 hover:text-green-400 hover:cursor-pointer"
-      @click="handleWizkidNavigate(wizkid.id)">
+      @click="handleWizkidNavigate(wizkid)">
       <Icon name="chevron-right  " :width="32" :height="32" />
     </div>
   </div>
