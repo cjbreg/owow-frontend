@@ -1,3 +1,4 @@
+import type { Role } from '@/models/Wizkid';
 import { defineStore } from 'pinia';
 
 export const useWizkidStore = defineStore({
@@ -27,7 +28,7 @@ interface State {
 interface IWizkid {
   id: string;
   name: string;
-  role: any;
+  role: Role;
   email: string;
   picture: any;
   phoneNumber?: number;
