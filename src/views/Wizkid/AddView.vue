@@ -40,7 +40,7 @@ export default {
         picture: newKid.picture
       };
       addWizkid(newWizkid);
-      this.$router.push('/');
+      this.$router.push('/wizkid');
     }
   }
 };
