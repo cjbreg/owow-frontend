@@ -33,8 +33,8 @@ export const useWizkidStore = defineStore({
     removeWizkid(id: string | string[]) {
       console.log(id);
       const objIndex = this.wizkids.findIndex((obj) => obj.id === id);
-      console.log(objIndex);
       this.wizkids.splice(objIndex, 1);
+      this.wizkid = defaultWizkid;
     }
   }
 });
