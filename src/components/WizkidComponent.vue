@@ -33,9 +33,9 @@ export default {
     </div>
 
     <div
-      class="text-white flex justify-center items-center p-2 rounded-2xl mr-2"
+      class="text-white flex justify-center items-center p-6 rounded-2xl mr-2 hover:text-green-400 hover:cursor-pointer"
       @click="handleWizkidNavigate(wizkid.id)">
-      <Icon name="chevron-right" :width="32" :height="32" />
+      <Icon name="chevron-right  " :width="32" :height="32" />
     </div>
   </div>
 </template>
