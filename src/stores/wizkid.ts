@@ -10,7 +10,10 @@ export const useWizkidStore = defineStore({
   }),
   persist: true,
   getters: {
-    fetchWizkids: (state) => state.wizkids
+    fetchWizkids: (state) => state.wizkids,
+    fetchWizkidById: (state) => {
+      return (id: string) => state.wizkids.find((x: IWizkid) => x.id === id);
+    }
   },
   actions: {
     resetWizkids() {
@@ -21,6 +24,17 @@ export const useWizkidStore = defineStore({
     },
     setCurrentWizkid(wizkid: IWizkid) {
       this.wizkid = wizkid;
+    },
+    updateWizkid(wizkid: IWizkid) {
+      const objIndex = this.wizkids.findIndex((obj) => obj.id === wizkid.id);
+      this.wizkids[objIndex] = wizkid;
+      this.wizkid = wizkid;
+    },
+    removeWizkid(id: string) {
+      console.log(id);
+      const objIndex = this.wizkids.findIndex((obj) => obj.id === id);
+      console.log(objIndex);
+      this.wizkids.splice(objIndex, 1);
     }
   }
 });
