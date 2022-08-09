@@ -1,6 +1,6 @@
 <script lang="ts">
 import { v4 as uuidv4 } from 'uuid';
-import type { Wizkid } from '@/models/wizkid';
+import type { Wizkid } from '@/models/Wizkid';
 import { storeToRefs } from 'pinia';
 import { useWizkidStore } from '../stores/wizkid';
 const { wizkids, loading } = storeToRefs(useWizkidStore());
@@ -29,19 +29,11 @@ export default {
 </script>
 
 <template>
-  <div class="about">
+  <div class="container mx-auto">
     <h1>This is an about page</h1>
     <p v-if="!loading">{{ loading }} {{ wizkids.length }}</p>
     <button @click="HandleAddWizkid">test</button>
   </div>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+<style></style>
