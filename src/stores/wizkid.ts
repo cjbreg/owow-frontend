@@ -12,6 +12,9 @@ export const useWizkidStore = defineStore({
   actions: {
     resetWizkids() {
       this.wizkids = [];
+    },
+    addWizkid(newWizkid: IWizkid) {
+      this.wizkids.push(newWizkid);
     }
   }
 });
@@ -22,6 +25,7 @@ interface State {
 }
 
 interface IWizkid {
+  id: string;
   name: string;
   role: any;
   email: string;
