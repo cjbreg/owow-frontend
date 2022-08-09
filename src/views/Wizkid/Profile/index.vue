@@ -22,6 +22,7 @@ export default defineComponent({
       this.$router.push(`/wizkid/profile/${id}/update`);
     },
     handleRemoveWizkid(id: string | string[]) {
+      this.$router.push(`/wizkid`);
       removeWizkid(id);
     }
   }
