@@ -25,7 +25,8 @@ export default {
         name: null,
         email: null,
         role: null,
-        picture: null
+        picture: null,
+        phoneNumber: null
       },
       roles: [Role.BOSS, Role.DESIGNER, Role.DEVELOPER, Role.ITERN]
     };
@@ -110,6 +111,21 @@ export default {
             <label
               class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
               Picture
+            </label>
+          </div>
+        </div>
+        <div class="relative z-0 mb-6 group flex">
+          <div class="relative w-full">
+            <input
+              type="tel"
+              pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+              class="block py-2.5 px-0 w-full text-sm text-dark bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer"
+              required
+              v-model="newKid.phoneNumber"
+              name="phoneNumber" />
+            <label
+              class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+              Phone Number
             </label>
           </div>
         </div>
