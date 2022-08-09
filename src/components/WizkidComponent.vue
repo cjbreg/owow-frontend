@@ -14,7 +14,6 @@ export default {
   methods: {
     handleWizkidNavigate(wizkid: Wizkid) {
       setCurrentWizkid(wizkid);
-      this.$router.push(`/wizkid/profile/${wizkid.id}`);
     }
   }
 };
@@ -36,11 +35,12 @@ export default {
       </div>
     </div>
 
-    <div
+    <RouterLink
+      :to="`/wizkid/profile/${wizkid.id}`"
       class="text-white flex justify-center items-center p-6 rounded-2xl mr-2 hover:text-green-400 hover:cursor-pointer"
       @click="handleWizkidNavigate(wizkid)">
       <Icon name="chevron-right  " :width="32" :height="32" />
-    </div>
+    </RouterLink>
   </div>
 </template>
 
