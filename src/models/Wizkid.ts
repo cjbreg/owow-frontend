@@ -8,7 +8,7 @@ export type Wizkid = {
 };
 
 export enum Role {
-  BOSS = 'role',
+  BOSS = 'boss',
   DEVELOPER = 'developer',
   DESIGNER = 'designer',
   ITERN = 'intern'
