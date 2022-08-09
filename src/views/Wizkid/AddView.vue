@@ -4,19 +4,8 @@ import type { Wizkid } from '@/models/Wizkid';
 import { Role } from '@/models/Wizkid';
 import { storeToRefs } from 'pinia';
 import { useWizkidStore } from '@/stores/wizkid';
-const { wizkids, loading } = storeToRefs(useWizkidStore());
+const { wizkids } = storeToRefs(useWizkidStore());
 const { addWizkid } = useWizkidStore();
-
-// const HandleAddWizkid = (newKid: Wizkid) => {
-//   const newWizkid: Wizkid = {
-//     id: uuidv4(),
-//     name: newKid.name,
-//     role: newKid.role,
-//     email: newKid.email,
-//     picture: newKid.picture
-//   };
-//   addWizkid(newWizkid);
-// };
 
 const isValid = (newKid: Wizkid): boolean => {
   const regex = /^\S+@\S+$/;
@@ -30,7 +19,6 @@ const isValid = (newKid: Wizkid): boolean => {
 export default {
   data() {
     return {
-      loading,
       wizkids,
       isValid,
       newKid: {
