@@ -1,7 +1,12 @@
-<script setup lang="ts">
+<script lang="ts">
 defineProps<{
-  msg: string
-}>()
+  msg: string;
+}>();
+export default {
+  data() {
+    return {};
+  }
+};
 </script>
 
 <template>
