@@ -2,12 +2,13 @@
 import { storeToRefs } from 'pinia';
 import { useWizkidStore } from '@/stores/wizkid';
 import { useRoute } from 'vue-router';
+import { defineComponent } from 'vue';
 const { wizkid } = storeToRefs(useWizkidStore());
 const { removeWizkid } = useWizkidStore();
 
 const route = useRoute();
 
-export default {
+export default defineComponent({
   data() {
     return {
       wizkid
@@ -17,26 +18,26 @@ export default {
     getCurrentWizkid() {
       console.log(route.params.id);
     },
-    handleUpdateWizkid(id: string) {
+    handleUpdateWizkid(id: string | string[]) {
       this.$router.push(`/wizkid/profile/${id}/update`);
     },
-    handleRemoveWizkid(id: string) {
+    handleRemoveWizkid(id: string | string[]) {
       removeWizkid(id);
     }
   }
-};
+});
 </script>
 
 <template>
   <div class="flex flex-col container">
     <div class="mb-4 text-white">
-      <h1 class="font-semibold text-lg">Wizkid: {{ wizkid.name }}</h1>
+      <h1 class="font-semibold text-lg">Wizkid: {{ wizkid?.name }}</h1>
     </div>
     <div class="flex flex-col text-white">
-      <p><span class="text-gray-300">Email: </span>{{ wizkid.email }}</p>
-      <p><span class="text-gray-300">Role: </span>{{ wizkid.role }}</p>
-      <p><span class="text-gray-300">Picture: </span>{{ wizkid.picture }}</p>
-      <p><span class="text-gray-300">Phone: </span>{{ wizkid.phoneNumber ?? 'unavailable' }}</p>
+      <p><span class="text-gray-300">Email: </span>{{ wizkid?.email }}</p>
+      <p><span class="text-gray-300">Role: </span>{{ wizkid?.role }}</p>
+      <p><span class="text-gray-300">Picture: </span>{{ wizkid?.picture }}</p>
+      <p><span class="text-gray-300">Phone: </span>{{ wizkid?.phoneNumber ?? 'unavailable' }}</p>
     </div>
     <div class="flex my-3">
       <button

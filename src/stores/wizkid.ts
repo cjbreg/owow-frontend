@@ -6,7 +6,7 @@ export const useWizkidStore = defineStore({
   state: (): State => ({
     wizkids: [],
     loading: false,
-    wizkid: null
+    wizkid: defaultWizkid
   }),
   persist: true,
   getters: {
@@ -30,7 +30,7 @@ export const useWizkidStore = defineStore({
       this.wizkids[objIndex] = wizkid;
       this.wizkid = wizkid;
     },
-    removeWizkid(id: string) {
+    removeWizkid(id: string | string[]) {
       console.log(id);
       const objIndex = this.wizkids.findIndex((obj) => obj.id === id);
       console.log(objIndex);
@@ -42,14 +42,21 @@ export const useWizkidStore = defineStore({
 interface State {
   wizkids: IWizkid[];
   loading: boolean;
-  wizkid: IWizkid | null;
+  wizkid: IWizkid;
 }
 
+const defaultWizkid: IWizkid = {
+  name: '',
+  role: null,
+  email: '',
+  picture: ''
+};
+
 interface IWizkid {
-  id: string;
+  id?: string;
   name: string;
-  role: Role;
+  role: Role | null;
   email: string;
   picture: string;
-  phoneNumber?: number;
+  phoneNumber?: number | null;
 }

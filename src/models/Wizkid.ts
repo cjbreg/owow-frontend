@@ -1,10 +1,10 @@
 export type Wizkid = {
-  id: string;
+  id?: string;
   name: string;
-  role: Role;
+  role: Role | null;
   email: string;
   picture: string;
-  phoneNumber?: number;
+  phoneNumber?: number | null;
 };
 
 export enum Role {

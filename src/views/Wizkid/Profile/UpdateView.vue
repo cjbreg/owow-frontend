@@ -4,6 +4,7 @@ import { useWizkidStore } from '@/stores/wizkid';
 import { useRoute } from 'vue-router';
 import { Role } from '@/models/Wizkid';
 import type { Wizkid } from '@/models/Wizkid';
+import { defineComponent } from 'vue';
 const { wizkid } = storeToRefs(useWizkidStore());
 const { updateWizkid, removeWizkid } = useWizkidStore();
 
@@ -18,7 +19,7 @@ const isValid = (newKid: Wizkid): boolean => {
   return true;
 };
 
-export default {
+export default defineComponent({
   data() {
     return {
       wizkid,
@@ -32,13 +33,13 @@ export default {
     },
     handleUpdateWizkid(wizkid: Wizkid) {
       updateWizkid(wizkid);
-      this.$router.push(`/wizkid/profile/${wizkid.id}`);
+      this.$router.push(`/wizkid/profile/${wizkid?.id}`);
     },
     handleRemoveWizkid(id: string) {
       removeWizkid(id);
     }
   }
-};
+});
 </script>
 
 <template>

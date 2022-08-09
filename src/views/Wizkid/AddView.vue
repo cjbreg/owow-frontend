@@ -4,6 +4,7 @@ import type { Wizkid } from '@/models/Wizkid';
 import { Role } from '@/models/Wizkid';
 import { storeToRefs } from 'pinia';
 import { useWizkidStore } from '@/stores/wizkid';
+import { defineComponent } from 'vue';
 const { wizkids } = storeToRefs(useWizkidStore());
 const { addWizkid } = useWizkidStore();
 
@@ -16,16 +17,16 @@ const isValid = (newKid: Wizkid): boolean => {
   return true;
 };
 
-export default {
+export default defineComponent({
   data() {
     return {
       wizkids,
       isValid,
       newKid: {
-        name: null,
-        email: null,
+        name: '',
+        email: '',
         role: null,
-        picture: null,
+        picture: '',
         phoneNumber: null
       },
       roles: [Role.BOSS, Role.DESIGNER, Role.DEVELOPER, Role.ITERN]
@@ -44,7 +45,7 @@ export default {
       this.$router.push('/wizkid');
     }
   }
-};
+});
 </script>
 
 <template>
