@@ -1,7 +1,9 @@
-<script setup lang="ts">
-const props = defineProps<{
-  msg: string;
-}>();
+<script lang="ts">
+export default {
+  props: {
+    msg: String
+  }
+};
 </script>
 
 <template>
