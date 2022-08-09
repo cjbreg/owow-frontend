@@ -7,6 +7,7 @@ export const useWizkidStore = defineStore({
     wizkids: [],
     loading: false
   }),
+  persist: true,
   getters: {
     fetchWizkids: (state) => state.wizkids
   },
