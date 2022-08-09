@@ -8,7 +8,7 @@ import HelloWorld from '@/components/HelloWorld.vue';
     <nav class="px-4 flex justify-between h-16 items-center w-full">
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/about">About</RouterLink>
-      <RouterLink to="/wizkid/add">Add</RouterLink>
+      <RouterLink to="/wizkid">Wizkids</RouterLink>
     </nav>
   </header>
   <div class="pt-8">
