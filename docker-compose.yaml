@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  frontend:
+    container_name: frontend-owow
+    image: frontend-owow
+    restart: unless-stopped
+    build: 
+      context: ./
+    ports: 
+      - "8080:8080"
