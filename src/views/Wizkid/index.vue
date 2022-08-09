@@ -1,6 +1,4 @@
 <script lang="ts">
-import type { Wizkid } from '@/models/Wizkid';
-import { Role } from '@/models/Wizkid';
 import { storeToRefs } from 'pinia';
 import { useWizkidStore } from '@/stores/wizkid';
 import WizkidComponent from '../../components/WizkidComponent.vue';

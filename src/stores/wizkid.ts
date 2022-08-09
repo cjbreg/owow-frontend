@@ -50,6 +50,6 @@ interface IWizkid {
   name: string;
   role: Role;
   email: string;
-  picture: any;
+  picture: string;
   phoneNumber?: number;
 }

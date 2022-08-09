@@ -1,5 +1,5 @@
 <script lang="ts">
-import Icon from './icons/Icon.vue';
+import Icon from './icons/FeatherIcon.vue';
 import { useWizkidStore } from '@/stores/wizkid';
 import type { Wizkid } from '@/models/Wizkid';
 const { setCurrentWizkid } = useWizkidStore();
