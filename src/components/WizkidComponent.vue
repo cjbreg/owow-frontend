@@ -7,7 +7,12 @@ export default {
       required: true
     }
   },
-  components: { Icon }
+  components: { Icon },
+  methods: {
+    handleWizkidNavigate(id: string) {
+      this.$router.push(`/wizkid/profile/${id}`);
+    }
+  }
 };
 </script>
 
@@ -27,7 +32,9 @@ export default {
       </div>
     </div>
 
-    <div class="text-white flex justify-center items-center p-2 rounded-2xl mr-2">
+    <div
+      class="text-white flex justify-center items-center p-2 rounded-2xl mr-2"
+      @click="handleWizkidNavigate(wizkid.id)">
       <Icon name="chevron-right" :width="32" :height="32" />
     </div>
   </div>

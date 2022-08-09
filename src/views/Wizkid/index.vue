@@ -14,7 +14,7 @@ export default {
   components: { WizkidComponent },
   methods: {
     handleAddNew() {
-      +this.$router.push('/wizkid/add');
+      this.$router.push('/wizkid/add');
     }
   }
 };
