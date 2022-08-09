@@ -39,7 +39,8 @@ export default defineComponent({
         name: newKid.name,
         role: newKid.role,
         email: newKid.email,
-        picture: newKid.picture
+        picture: newKid.picture,
+        phoneNumber: newKid.phoneNumber
       };
       addWizkid(newWizkid);
       this.$router.push('/wizkid');
